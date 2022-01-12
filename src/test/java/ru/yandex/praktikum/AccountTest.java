@@ -13,7 +13,7 @@ public class AccountTest {
     private final String name;
     private final boolean expected;
 
-    public AccountTest(String name, boolean expected){
+    public AccountTest(String name, boolean expected) {
         this.name = name;
         this.expected = expected;
     }
@@ -41,6 +41,10 @@ public class AccountTest {
                 {RandomStringUtils.randomAlphabetic(2), false},
                 // 20 символов
                 {RandomStringUtils.randomAlphabetic(20), false},
+                // Пустая строка
+                {"", false},
+                // Null
+                {null, false},
         };
     }
 

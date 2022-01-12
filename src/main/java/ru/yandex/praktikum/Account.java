@@ -1,7 +1,5 @@
 package ru.yandex.praktikum;
 
-import com.google.common.base.CharMatcher;
-
 public class Account {
 
     private final String name;
@@ -11,10 +9,8 @@ public class Account {
     }
 
     public boolean checkNameToEmboss() {
-        return name.length() >= 3 &&
-                name.length() <= 19 &&
-                CharMatcher.is(' ').countIn(name) == 1 &&
-                CharMatcher.is(' ').countIn(name.trim()) == 1;
+        return name != null &&
+                name.matches("(^\\S+ {1}\\S+$)(?<=.{3,19})");
     }
 
 }
